@@ -10,7 +10,7 @@
   let deferred=null,booted=false;
   function installed(){return standalone.matches||matchMedia('(display-mode: fullscreen)').matches||navigator.standalone===true;}
   function startApp(){
-    if(booted)return;booted=true;card.hidden=true;document.getElementById('loading').hidden=false;
+    if(booted)return;booted=true;card.hidden=true;card.style.pointerEvents='none';card.setAttribute('inert','');document.getElementById('loading').hidden=false;
     const script=document.createElement('script');script.src='flutter_bootstrap.js';script.async=true;
     script.onerror=()=>document.getElementById('boot-error').style.display='grid';document.body.append(script);
     setTimeout(()=>{if(document.getElementById('loading'))document.getElementById('boot-error').style.display='grid';},45000);
