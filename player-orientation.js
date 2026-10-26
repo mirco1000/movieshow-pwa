@@ -1,5 +1,11 @@
 (() => {
   let ownFullscreen=false,nativeVideo=null;
+  window.movieShowPrepareLandscape=()=>{
+    // Request landscape/fullscreen directly in the Play gesture.
+    if(document.documentElement.requestFullscreen&&!document.fullscreenElement){
+      document.documentElement.requestFullscreen().then(()=>{ownFullscreen=true;return screen.orientation?.lock?.('landscape');}).catch(()=>{});
+    }
+  };
   window.movieShowEnterLandscape=async fullscreen=>{
     if(fullscreen){
       const videos=Array.from(document.querySelectorAll('video'));
