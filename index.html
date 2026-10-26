@@ -20,6 +20,6 @@
 </div></aside>
 <script src="movieshow-platform.js"></script>
 <script src="install-prompt.js"></script>
-<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script>
+<script>if('serviceWorker'in navigator){const wasControlled=!!navigator.serviceWorker.controller;let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(wasControlled&&!refreshing){refreshing=true;location.reload()}});navigator.serviceWorker.register('sw.js').catch(()=>{})}</script>
 
 </body></html>
