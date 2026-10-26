@@ -33540,7 +33540,7 @@ l9:function l9(){},
 ua(a){var s
 if(a.gR4())s=a.gem()==="http"||a.gem()==="https"
 else s=!1
-if(s)s=A.bZ("/api/proxy"+(B.c.hI(a.gf8(a).toLowerCase(),".m3u8")?".m3u8":""),0,null).J6(0,A.af(["url",a.j(0)],t.N,t.z))
+if(s)s=A.bZ("https://movieshow-api.nano30002.workers.dev/api/proxy"+(B.c.hI(a.gf8(a).toLowerCase(),".m3u8")?".m3u8":""),0,null).J6(0,A.af(["url",a.j(0)],t.N,t.z))
 else s=a
 return s},
 DS(a){var s,r

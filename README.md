@@ -1,13 +1,7 @@
 # MovieShow PWA
 
-Version web compilée de MovieShow, servie par GitHub Pages.
+Version web compilée : https://mirco1000.github.io/movieshow-pwa/
 
-Le dépôt contient uniquement les fichiers publiés : les sources Flutter et les clés de service ne sont pas incluses.
+Le relais HTTPS est déployé sur Cloudflare Workers. Les sources Flutter et les clés de service ne sont pas incluses dans ce dépôt.
 
-## Installation
-
-Ouvrez https://mirco1000.github.io/movieshow-pwa/ . Android : Installer. iPhone/iPad : Safari → Partager → Sur l’écran d’accueil. Lancez ensuite MovieShow depuis son icône.
-
-## Service API
-
-GitHub Pages ne peut pas exécuter le serveur de relais API/médias utilisé par MovieShow en local. La connexion, le catalogue et les flux nécessitent un relais HTTPS externe configuré pour cette version. L’interface d’installation et les fichiers de la PWA sont hébergés ici.
+Android : Installer. iPhone/iPad : Safari → Partager → Sur l’écran d’accueil. Ouvrir ensuite MovieShow depuis son icône.
