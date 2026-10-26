@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<base href="/movieshow-pwa/">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080a0e"><meta name="description" content="MovieShow : films, séries et télévision, dans votre navigateur.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MovieShow"><link rel="apple-touch-icon" href="icons/Icon-192.png">
+<link rel="icon" type="image/png" href="favicon.png"><link rel="manifest" href="manifest.json"><title>MovieShow</title>
+<style>html,body{margin:0;min-height:100%;background:#080a0e;color:#fff;font-family:system-ui}#loading{position:fixed;inset:0;display:grid;place-content:center;text-align:center;gap:18px}#loading img{width:112px;margin:auto;border-radius:24px}#loading p{color:#a9b3be}#install{position:fixed;right:16px;bottom:16px;z-index:10000;border:1px solid #313941;border-radius:16px;background:#13231f;color:#fff;padding:13px 19px;cursor:pointer}button:focus-visible{outline:3px solid #04cb9b}#boot-error{display:none;position:fixed;inset:0;z-index:10001;background:#080a0e;padding:30px;text-align:center;place-content:center}#boot-error button{padding:14px;border-radius:10px;cursor:pointer}#install-card[hidden]{display:none}#install-card{position:fixed;z-index:10000;bottom:max(16px,env(safe-area-inset-bottom));left:16px;right:16px;max-width:430px;margin-left:auto;padding:20px;border:1px solid #353535;border-radius:20px;background:#161616;box-shadow:0 12px 48px #0009;color:#fff;font:15px/1.5 system-ui;box-sizing:border-box}#install-card h2{font-size:19px;margin:0 28px 7px 0}#install-card p{margin:7px 0;color:#c9c9c9}#install-card button{font:inherit;cursor:pointer;border-radius:10px;padding:10px 15px}#install-action{border:0;background:#c60004;color:#fff;font-weight:600;margin-top:8px}#install-later{border:0;background:transparent;color:#bcbcbc}#install-close{position:absolute;right:9px;top:7px;border:0;background:transparent;color:#ccc;font-size:23px!important}#install-steps{padding-left:21px;margin-bottom:4px}#loading[hidden]{display:none}#install-card{inset:0;max-width:none;margin:0;border:0;border-radius:0;padding:24px;display:flex;align-items:center;justify-content:center;background:#080a0e}#install-card[hidden]{display:none}.install-dialog{width:100%;max-width:400px;padding:28px;box-sizing:border-box;background:#161616;border:1px solid #353535;border-radius:22px}.install-dialog img{display:block;margin-bottom:20px;border-radius:16px}#install-exit{border:1px solid #444;background:transparent;color:#fff;margin:8px 0 0 8px}#install-card h2{margin-right:0}</style>
+<script>function removeSplashFromWeb(){document.getElementById('loading')?.remove()}window.addEventListener('flutter-first-frame',removeSplashFromWeb);</script>
+</head><body>
+<div id="loading" role="status" hidden><img src="icons/Icon-192.png" alt=""><h1>MovieShow</h1><p>Préparation de votre application…</p></div>
+<div id="boot-error" role="alert"><h1>MovieShow est indisponible</h1><p>Vérifiez votre connexion, puis réessayez.</p><button onclick="location.reload()">Réessayer</button></div>
+<aside id="install-card" aria-labelledby="install-title"><div class="install-dialog"><img src="icons/Icon-192.png" width="80" height="80" alt="MovieShow">
+
+<h2 id="install-title">Installer MovieShow ?</h2>
+<p>Ajoutez MovieShow à votre écran d’accueil.</p>
+<div id="install-help" hidden><ol id="install-steps"></ol><p id="install-note"></p></div>
+<button id="install-action">Installer</button><button id="install-exit">Quitter</button>
+</div></aside>
+<script src="movieshow-platform.js"></script>
+<script src="install-prompt.js"></script>
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script>
+
+</body></html>
